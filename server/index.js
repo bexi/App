@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 const app = express();
+const router = require('./router');
 // App setup
 // middleware, all incoming requests are going through these
 app.use(morgan('combined')); // logging framework
 app.use(bodyParser.json({type: '*/*'})); // parse incoming requests
+router(app);
 
 // Server setup
 // if there is an env variable: use that
