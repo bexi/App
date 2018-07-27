@@ -5,6 +5,9 @@ const morgan = require('morgan');
 
 const app = express();
 // App setup
+// middleware, all incoming requests are going through these
+app.use(morgan('combined')); // logging framework
+app.use(bodyParser.json({type: '*/*'})); // parse incoming requests
 
 // Server setup
 // if there is an env variable: use that
