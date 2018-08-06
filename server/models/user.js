@@ -10,6 +10,7 @@ const userSchema = new Schema({
 });
 
 // on save hook, encrypt password
+// before saving model, run this function
 userSchema.pre('save', function(next) {
   // get access to user model
   const user = this;
@@ -22,7 +23,7 @@ userSchema.pre('save', function(next) {
     bcrypt.hash(user.password, salt, null, function(err,hash){
       if (err) { return next(err); }
       // overwrite the plain text password with encrypted one
-      user.password = hash;
+      user.password =  hash;
       // save model
       next();
     });
