@@ -12,7 +12,7 @@ const userSchema = new Schema({
 // on save hook, encrypt password
 // before saving model, run this function
 userSchema.pre('save', function(next) {
-  // get access to user model
+  // get access to user model, an instance of the user model
   const user = this;
 
   // generate a salt then run callback

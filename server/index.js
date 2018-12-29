@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); // TODO: not need now since it is in express
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
@@ -8,7 +8,7 @@ const app = express();
 const router = require('./router');
 
 // DB setup
-mongoose.connect('mongodb://localhost:27017/auth',  { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/auth',  { useNewUrlParser: true }); // auth is the name of the db
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
