@@ -30,3 +30,13 @@
 * passport
 * passport-jwt
 * passport-local
+
+# Routes
+* /signup - POST req:
+json with JSON ex:
+{
+  "email": "rebecka@hotmail.com",
+  "password": "123"
+}
+* /signin - POST req: email and password
+* ./ - GET req: Header Authorization: <token>
