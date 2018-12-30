@@ -1,4 +1,4 @@
-# App notes (for learning purposes)
+# Server notes (for learning purposes)
 
 # Installation
 * Install mongodb
